@@ -14,8 +14,7 @@ app = Flask(__name__)
 
 @app.route('/rfps')
 def get_rfps():
-    max_pages = request.args.get('max_pages', default=5, type=int)
-
+    max_pages = 5
     options = Options()
     options.add_argument('--headless')
     options.add_argument('--no-sandbox')
@@ -74,6 +73,7 @@ def get_rfps():
     driver.quit()
 
     return jsonify({"rfps": all_rfps, "count": len(all_rfps)})
+    print("hello")
 
 
 if __name__ == '__main__':
