@@ -11,7 +11,10 @@ import time
 
 app = Flask(__name__)
 
-
+@app.route('/rfps')
+def get_rfps2():
+    print("hello")
+    
 @app.route('/rfps')
 def get_rfps():
     max_pages = 5
